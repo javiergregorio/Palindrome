@@ -1,4 +1,4 @@
-Palindrome
+Palindrome tester
 ==============
 
 Template for a simple Vaadin application where you enter a word and determines if it is a palindrome or not.
