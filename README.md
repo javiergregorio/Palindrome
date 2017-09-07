@@ -1,7 +1,9 @@
-palindrome
+Palindrome
 ==============
 
-Template for a simple Vaadin application that only requires a Servlet 3.0 container to run.
+Template for a simple Vaadin application where you enter a word and determines if it is a palindrome or not.
+
+This application only requires a Servlet 3.0 container to run.
 
 
 Workflow
@@ -15,6 +17,7 @@ To produce a deployable production mode WAR:
 - change productionMode to true in the servlet class configuration (nested in the UI class)
 - run "mvn clean package"
 - test the war file with "mvn jetty:run-war"
+
 
 Client-Side compilation
 -------------------------
