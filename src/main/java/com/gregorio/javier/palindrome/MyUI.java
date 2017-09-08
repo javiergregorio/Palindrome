@@ -23,11 +23,9 @@ public class MyUI extends UI {
         
         final TextField palindrome = new TextField();
         palindrome.setPlaceholder("Example: Racecar");
-        palindrome.setCaption("Type the word you want to test here:");
+        palindrome.setCaption("Type the word or phrase you want to test here:");
         
         Data data = new Data();
-
-    	System.out.print(data.getPalindrome());
     	
         Button button = new Button("Palindrome?");
         button.addClickListener( e -> {
@@ -35,7 +33,7 @@ public class MyUI extends UI {
         	data.setPalindrome(palindrome.getValue());
         	String testWord = data.getPalindrome();
     		
-        	layout.addComponent(new Label("Hi, the word " + testWord + ", " + isPalindrome(testWord) + ", thank you"));
+        	layout.addComponent(new Label("Hi, the word or phrase \"" + palindrome.getValue() + "\", " + isPalindrome(testWord) + ", thank you"));
         });
         
         layout.addComponents(palindrome, button);
@@ -45,13 +43,16 @@ public class MyUI extends UI {
 
 
 	private String isPalindrome(String testW) {
+		
+		String testWordLowCase = testW.replace(" ", "").toLowerCase();
+		
 		int i=0;
-		int j=testW.length()-1;
+		int j=testWordLowCase.length()-1;
 		boolean res = false;
 
 		while((i<j) && (!res)){
 			
-			if(testW.charAt(i) == testW.charAt(j)){
+			if(testWordLowCase.charAt(i) == testWordLowCase.charAt(j)){
 				i++;
 				j--;
 			}else{
